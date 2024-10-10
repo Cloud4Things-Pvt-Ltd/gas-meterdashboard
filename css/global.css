@@ -1,0 +1,22 @@
+:root {
+    --bg-color: #fff;
+    --dark-color: #000;
+    --grey-color: #ccc;
+    --color1: #0791A8;
+    --color2: #E64C25;
+    --color3: #64BFCA;
+    --color4: #D0F3EF;
+    --color5: #033a44;
+    --color6: #242424;
+    --color7: #c2c2c2;
+    --color8: #3a3a3a;
+    --color9: #2F3C4C;
+    --color10:#f9f9f9;
+    --swatch1 : #64BFCA;
+      --swatch2 : #684DF4;
+      --swatch3 : #D0F3EF;
+      --swatch4 : #323F7C;
+      --swatch5 : #37c4fc;
+      --swatch6 : #8A2BE2;
+    --main-font: "Lexend", sans-serif;
+  }

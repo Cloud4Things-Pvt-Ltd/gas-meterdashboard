@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=2.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Cloud4Things Dashboard" />
+
+  <title>Gas Meters - Cloud4Things Dashboard</title>
+
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+  <!--main_css-->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/global.css" rel="stylesheet" type="text/css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!--responsive_css-->
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+  <!--font-awesome-->
+  <link rel="stylesheet" href="css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="css/fontawesome.min.css" type="text/css">
+
+  <!--Apexcharts-->
+  <link href="css/apexcharts.css" rel="stylesheet" type="text/css">
+
+  <!--animate-->
+  <link href="css/animate.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+  <!--color-palette-->
+  <div class="swatch-palette">
+    <div class="color-palette" id="slide-button"><i class="fa-solid fa-cog fa-spin fa-spin-reverse"></i></div>
+    <div class="palette-swatches">
+        <a href="#" class="close-icon"><i class="fa-solid fa-xmark"></i></a>
+        <p>Style Switcher</p>
+        <ul class="switch-color">
+            <li data-color="#64BFCA"></li>
+            <li data-color="#684DF4"></li>
+            <li data-color="#D0F3EF"></li>
+            <li data-color="#323F7C"></li>
+            <li data-color="#37c4fc"></li>
+            <li data-color="#8A2BE2"></li>
+        </ul>
+        <hr>
+        <p>Text Size Changer</p>
+        <div id="chcp_font_size">
+          <span class="input-group-btn">
+              <button id="btn-decrease" class="btn btn-default" type="button"><i class="fa fa-font"
+                      aria-hidden="true"></i>-</button>
+              <button id="btn-orig" class="btn btn-default" type="button"><i class="fa fa-font"
+                      aria-hidden="true"></i></button>
+              <button id="btn-increase" class="btn btn-default" type="button"><i class="fa fa-font"
+                      aria-hidden="true"></i>+</button>
+          </span>
+      </div>
+    </div>
+</div>
+<!--end-->
+
+  <!--Sticky-header-->
+  <section class="header-wrapper">
+    <header class="main-header">
+      <div class="row">
+        <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-12 col-sm-12 col-12">
+          <div class="logo-area">
+            <a href="index.html"><img alt="image" src="images/logo.png"></a>
+          </div>
+        </div>
+        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+          <label for="Gas Station">Gas Station :</label>
+          <select>
+            <option>Gas Station :</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+          </select>
+        </div>
+        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12">
+          <label for="DSR">DSR :</label>
+          <select>
+            <option>DSR :</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+          </select>
+        </div>
+        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12">
+          <label for="SR">SR :</label>
+          <select>
+            <option>SR :</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+            <option>Lorem Ipsum</option>
+          </select>
+        </div>
+        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+          <div class="main-date-pick">
+            <form>
+              <label>From :</label>
+              <input type="date" id="datepicker">
+              <label>to :</label>
+              <input type="date" id="datepicker">
+            </form>
+          </div>
+        </div>
+        <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-12 col-sm-12 col-12">
+          <div class="user-sec float-end">
+            <p id="log-btn"><i class="fa-solid fa-right-to-bracket"></i> Login</p>
+            <div class="user-box">
+              <ul>
+                  <li>
+                      <p><i class="fa-solid fa-lock"></i> <a href="change-password.html">Change Password</a>
+                      </p>
+                  </li>
+                  <li>
+                      <p><i class="fa-solid fa-arrow-right-from-bracket"></i> <a href="#">Logout</a></p>
+                  </li>
+              </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="site-tabs">
+        <div class="row">
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 site-padding">
+            <ul class="nav nav-pills mb-3" id="pills-tab main-site-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                   type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                    <div class="main-tab-icon">
+                      <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 285.938 285.938" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path d="M142.969,0c-51.694,0-93.75,42.056-93.75,93.75v16.477c0,14.48,3.422,28.978,9.895,41.925l39.567,79.139
+				c2.231,4.458,6.563,7.313,11.47,7.697v46.95h9.375v-46.875h46.875v46.875h9.375v-46.95c4.908-0.38,9.239-3.234,11.47-7.697
+				l39.567-79.139c6.483-12.947,9.905-27.445,9.905-41.925V93.75C236.719,42.056,194.664,0,142.969,0z M227.344,110.227
+				c0,13.031-3.08,26.081-8.906,37.734L178.87,227.1c-0.806,1.594-2.409,2.588-4.195,2.588h-63.413
+				c-1.786,0-3.394-0.994-4.195-2.592L67.5,147.956c-5.827-11.653-8.906-24.703-8.906-37.734V93.75
+				c0-46.523,37.852-84.375,84.375-84.375s84.375,37.852,84.375,84.375V110.227z"/>
+			<path d="M142.969,18.75c-41.353,0-75,33.647-75,75v4.688h150V93.75C217.969,52.397,184.323,18.75,142.969,18.75z M77.508,89.063
+				c2.414-34.003,30.853-60.938,65.461-60.938s63.047,26.934,65.461,60.938H77.508z"/>
+			<path d="M171.094,164.063h28.125v-56.25h-28.125V164.063z M180.469,117.188h9.375v37.5h-9.375V117.188z"/>
+			<path d="M161.719,107.813h-75v56.25h75V107.813z M152.344,154.688h-56.25v-37.5h56.25V154.688z"/>
+			<rect x="105.469" y="182.813" width="70.313" height="9.375"/>
+			<rect x="105.469" y="201.563" width="51.563" height="9.375"/>
+			<rect x="166.406" y="201.563" width="9.375" height="9.375"/>
+		</g>
+	</g>
+</g>
+</svg>
+                    </div>
+                    Total Meters</button> 
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                  type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                  <div class="main-tab-icon">
+                    <svg fill="#000000" width="800px" height="800px" viewBox="0 -6.28 45.35 45.35" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><path class="cls-1" d="M7.79,28.4a20,20,0,0,1,5.9-14.25,1.24,1.24,0,0,0,0-1.78,1.26,1.26,0,0,0-1.78,0,22.66,22.66,0,0,0,0,32.05,1.25,1.25,0,0,0,.89.37,1.22,1.22,0,0,0,.89-.37,1.24,1.24,0,0,0,0-1.78A20,20,0,0,1,7.79,28.4" transform="translate(-5.27 -12)"/><path class="cls-1" d="M44,12.37a1.26,1.26,0,0,0-1.78,1.78,20.12,20.12,0,0,1,0,28.49,1.26,1.26,0,0,0,.89,2.15,1.22,1.22,0,0,0,.89-.37,22.63,22.63,0,0,0,0-32.05" transform="translate(-5.27 -12)"/><path class="cls-1" d="M40.4,15.93a1.26,1.26,0,0,0-1.78,1.78,15.08,15.08,0,0,1,0,21.37,1.26,1.26,0,0,0,0,1.78,1.29,1.29,0,0,0,.89.37,1.26,1.26,0,0,0,.89-.37,17.61,17.61,0,0,0,0-24.93" transform="translate(-5.27 -12)"/><path class="cls-1" d="M12.82,28.4a15,15,0,0,1,4.44-10.69,1.26,1.26,0,1,0-1.79-1.78,17.61,17.61,0,0,0,0,24.93,1.26,1.26,0,1,0,1.79-1.78A15,15,0,0,1,12.82,28.4" transform="translate(-5.27 -12)"/><path class="cls-1" d="M38,28.4a10,10,0,0,1-3,7.12,1.26,1.26,0,0,0,0,1.78,1.29,1.29,0,0,0,.89.37,1.27,1.27,0,0,0,.89-.37,12.57,12.57,0,0,0,0-17.81,1.26,1.26,0,0,0-1.78,1.78,10,10,0,0,1,3,7.13" transform="translate(-5.27 -12)"/><path class="cls-1" d="M19,37.3a1.26,1.26,0,0,0,.89.37,1.29,1.29,0,0,0,.89-.37,1.26,1.26,0,0,0,0-1.78,10.06,10.06,0,0,1,0-14.25A1.26,1.26,0,0,0,19,19.49,12.57,12.57,0,0,0,19,37.3" transform="translate(-5.27 -12)"/><circle cx="22.94" cy="16.46" r="7.34"/></svg>
+                  </div>
+                  Communication Status
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                  type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                  <div class="main-tab-icon">
+                    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M18.9809 9.25283C18.2198 7.32031 16.6794 5.77999 14.7469 5.01897C14.5229 5.27358 14.3413 5.56647 14.2133 5.88656C16.0226 6.54172 17.4581 7.97718 18.1133 9.7864C18.4334 9.6584 18.7263 9.47685 18.9809 9.25283ZM12.2276 5.50391C12.1521 5.50131 12.0762 5.5 12 5.5C8.41015 5.5 5.5 8.41015 5.5 12C5.5 15.5899 8.41015 18.5 12 18.5C15.5899 18.5 18.5 15.5899 18.5 12C18.5 11.9237 18.4987 11.8478 18.4961 11.7721C18.8387 11.6648 19.1655 11.5216 19.472 11.347C19.4905 11.5622 19.5 11.78 19.5 12C19.5 16.1421 16.1421 19.5 12 19.5C7.85786 19.5 4.5 16.1421 4.5 12C4.5 7.85786 7.85786 4.5 12 4.5C12.2199 4.5 12.4376 4.50946 12.6527 4.52801C12.4781 4.83451 12.3349 5.16128 12.2276 5.50391Z" fill="#222222"/>
+                      <circle cx="17" cy="7" r="3" fill="#222222"/>
+                      </svg>
+                  </div>
+                  Valve Status
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact1-tab" data-bs-toggle="pill" data-bs-target="#pills-contact1"
+                  type="button" role="tab" aria-controls="pills-contact1" aria-selected="false">
+                  <div class="main-tab-icon">
+                    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 14C17.5523 14 18 13.5523 18 13C18 12.4477 17.5523 12 17 12C16.4477 12 16 12.4477 16 13C16 13.5523 16.4477 14 17 14Z" fill="#1C274C"/>
+                      <path d="M17 18C17.5523 18 18 17.5523 18 17C18 16.4477 17.5523 16 17 16C16.4477 16 16 16.4477 16 17C16 17.5523 16.4477 18 17 18Z" fill="#1C274C"/>
+                      <path d="M13 13C13 13.5523 12.5523 14 12 14C11.4477 14 11 13.5523 11 13C11 12.4477 11.4477 12 12 12C12.5523 12 13 12.4477 13 13Z" fill="#1C274C"/>
+                      <path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#1C274C"/>
+                      <path d="M7 14C7.55229 14 8 13.5523 8 13C8 12.4477 7.55229 12 7 12C6.44772 12 6 12.4477 6 13C6 13.5523 6.44772 14 7 14Z" fill="#1C274C"/>
+                      <path d="M7 18C7.55229 18 8 17.5523 8 17C8 16.4477 7.55229 16 7 16C6.44772 16 6 16.4477 6 17C6 17.5523 6.44772 18 7 18Z" fill="#1C274C"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 1.75C7.41421 1.75 7.75 2.08579 7.75 2.5V3.26272C8.412 3.24999 9.14133 3.24999 9.94346 3.25H14.0564C14.8586 3.24999 15.588 3.24999 16.25 3.26272V2.5C16.25 2.08579 16.5858 1.75 17 1.75C17.4142 1.75 17.75 2.08579 17.75 2.5V3.32709C18.0099 3.34691 18.2561 3.37182 18.489 3.40313C19.6614 3.56076 20.6104 3.89288 21.3588 4.64124C22.1071 5.38961 22.4392 6.33855 22.5969 7.51098C22.75 8.65018 22.75 10.1058 22.75 11.9435V14.0564C22.75 15.8941 22.75 17.3498 22.5969 18.489C22.4392 19.6614 22.1071 20.6104 21.3588 21.3588C20.6104 22.1071 19.6614 22.4392 18.489 22.5969C17.3498 22.75 15.8942 22.75 14.0565 22.75H9.94359C8.10585 22.75 6.65018 22.75 5.51098 22.5969C4.33856 22.4392 3.38961 22.1071 2.64124 21.3588C1.89288 20.6104 1.56076 19.6614 1.40314 18.489C1.24997 17.3498 1.24998 15.8942 1.25 14.0564V11.9436C1.24998 10.1058 1.24997 8.65019 1.40314 7.51098C1.56076 6.33855 1.89288 5.38961 2.64124 4.64124C3.38961 3.89288 4.33856 3.56076 5.51098 3.40313C5.7439 3.37182 5.99006 3.34691 6.25 3.32709V2.5C6.25 2.08579 6.58579 1.75 7 1.75ZM5.71085 4.88976C4.70476 5.02502 4.12511 5.27869 3.7019 5.7019C3.27869 6.12511 3.02502 6.70476 2.88976 7.71085C2.86685 7.88123 2.8477 8.06061 2.83168 8.25H21.1683C21.1523 8.06061 21.1331 7.88124 21.1102 7.71085C20.975 6.70476 20.7213 6.12511 20.2981 5.7019C19.8749 5.27869 19.2952 5.02502 18.2892 4.88976C17.2615 4.75159 15.9068 4.75 14 4.75H10C8.09318 4.75 6.73851 4.75159 5.71085 4.88976ZM2.75 12C2.75 11.146 2.75032 10.4027 2.76309 9.75H21.2369C21.2497 10.4027 21.25 11.146 21.25 12V14C21.25 15.9068 21.2484 17.2615 21.1102 18.2892C20.975 19.2952 20.7213 19.8749 20.2981 20.2981C19.8749 20.7213 19.2952 20.975 18.2892 21.1102C17.2615 21.2484 15.9068 21.25 14 21.25H10C8.09318 21.25 6.73851 21.2484 5.71085 21.1102C4.70476 20.975 4.12511 20.7213 3.7019 20.2981C3.27869 19.8749 3.02502 19.2952 2.88976 18.2892C2.75159 17.2615 2.75 15.9068 2.75 14V12Z" fill="#1C274C"/>
+                      </svg>
+                  </div>
+                  Alarms & Events</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="meter-tab">
+                  <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                      <div class="chart-inner" id="m-chart1">
+                        <canvas id="BA-chart-job-error" id="m-chart-1" width="800" height="600"></canvas>
+                      </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                      <!--tables-->
+
+                      <!--Commisioned-->
+                      <div class="table-each table-responsive">
+                        <table class="table">
+                          <center>
+                            <h4>Commissioned</h4>
+                          </center>
+                          <thead>
+                            <tr>
+                              <th scope="col">Serial No.</th>
+                              <th scope="col">LDN</th>
+                              <th scope="col">BP No.</th>
+                              <th scope="col">Meter Type</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>654</td>
+                              <td>9277</td>
+                              <td>ISGM / RAC</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>654</td>
+                              <td>9277</td>
+                              <td>ISGM / RAC</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>654</td>
+                              <td>9277</td>
+                              <td>ISGM / RAC</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!--end-->
+
+                      <!--Non-Commisioned-->
+                      <div class="table-each table-responsive">
+                        <table class="table">
+                          <center>
+                            <h4>Non-Commissioned</h4>
+                          </center>
+                          <thead>
+                            <tr>
+                              <th scope="col">Serial No.</th>
+                              <th scope="col">LDN</th>
+                              <th scope="col">BP No.</th>
+                              <th scope="col">Meter Type</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>654</td>
+                              <td>9277</td>
+                              <td>ISGM / RAC</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>654</td>
+                              <td>9277</td>
+                              <td>ISGM / RAC</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>654</td>
+                              <td>9277</td>
+                              <td>ISGM / RAC</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!--end-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                <div class="top-right float-end">
+                  <select name="" id="">
+                    <option value="">Last 7 Days</option>
+                    <option value="">Last 30 Days</option>
+                  </select>
+                  <form>
+                    <label>From :</label>
+                    <input type="date" id="datepicker">
+                    <label>to :</label>
+                    <input type="date" id="datepicker">
+
+                    <input type="submit" value="Go">
+                  </form>
+                </div>
+
+                <div id="tab-chart"></div>
+
+                <!-- Popup for LDN / BP -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Heading</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body" id="comm-status">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="com-status1-tab" data-bs-toggle="pill"
+                              data-bs-target="#com-status1" type="button" role="tab" aria-controls="com-status1"
+                              aria-selected="true">Voltage Record</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="com-status2-tab" data-bs-toggle="pill"
+                              data-bs-target="#com-status2" type="button" role="tab" aria-controls="com-status2"
+                              aria-selected="false">Success Rate</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="com-status3-tab" data-bs-toggle="pill"
+                              data-bs-target="#com-status3" type="button" role="tab" aria-controls="com-status3"
+                              aria-selected="false">Assign to WFM</button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                          <div class="tab-pane fade show active" id="com-status1" role="tabpanel"
+                            aria-labelledby="com-status1-tab">
+                            <div class="com-status-ttt">
+                              <div id="com-status-chart"></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="com-status2" role="tabpanel" aria-labelledby="com-status2-tab">
+                            <div class="com-status-ttt">
+                              <div id="com-status-chart1"></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="com-status3" role="tabpanel" aria-labelledby="com-status3-tab">
+                            ...</div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--tables-->
+
+                <!--Commisioned-->
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Serial No.</th>
+                        <th scope="col">LDN</th>
+                        <th scope="col">BP No.</th>
+                        <th scope="col">Readings</th>
+                        <th scope="col">Reason for Non-Communication</th>
+                        <th scope="col">Last Date Time Stamp</th>
+                        <th scope="col">Signal Strength</th>
+                        <th scope="col">Battery Strength</th>
+                        <th scope="col">Signal Quality Strength (CSQ)</th>
+                        <th scope="col">RSRP</th>
+                        <th scope="col">Signal Noise</th>
+                        <th scope="col">Frequency</th>
+                        <th scope="col">Cell Tower ID</th>
+                        <th scope="col">ECL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>1</td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">7667</a></td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">3455</a></td>
+                        <td>Lorem Ipsum</td>
+                        <td>Reason Demo Text</td>
+                        <td>12:00PM</td>
+                        <td>Weak</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>Demo TRext</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>2233343</td>
+                        <td>ECL Name</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>2</td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">7667</a></td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">3455</a></td>
+                        <td>Lorem Ipsum</td>
+                        <td>Reason Demo Text</td>
+                        <td>12:00PM</td>
+                        <td>Weak</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>Demo TRext</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>2233343</td>
+                        <td>ECL Name</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>3</td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">7667</a></td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">3455</a></td>
+                        <td>Lorem Ipsum</td>
+                        <td>Reason Demo Text</td>
+                        <td>12:00PM</td>
+                        <td>Weak</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>Demo TRext</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>2233343</td>
+                        <td>ECL Name</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>4</td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">7667</a></td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">3455</a></td>
+                        <td>Lorem Ipsum</td>
+                        <td>Reason Demo Text</td>
+                        <td>12:00PM</td>
+                        <td>Weak</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>Demo TRext</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>2233343</td>
+                        <td>ECL Name</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>5</td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">7667</a></td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">3455</a></td>
+                        <td>Lorem Ipsum</td>
+                        <td>Reason Demo Text</td>
+                        <td>12:00PM</td>
+                        <td>Weak</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>Demo TRext</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>2233343</td>
+                        <td>ECL Name</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>6</td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">7667</a></td>
+                        <td><a href="javascript:void(0);" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">3455</a></td>
+                        <td>Lorem Ipsum</td>
+                        <td>Reason Demo Text</td>
+                        <td>12:00PM</td>
+                        <td>Weak</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>Demo TRext</td>
+                        <td>Strong</td>
+                        <td>Strong</td>
+                        <td>2233343</td>
+                        <td>ECL Name</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--end-->
+
+
+              </div>
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="valve-status-tab">
+                  <div class="top-right float-end">
+                    <select name="" id="">
+                      <option value="">Last 7 Days</option>
+                      <option value="">Last 30 Days</option>
+                    </select>
+                    <form>
+                      <label>From :</label>
+                      <input type="date" id="datepicker">
+                      <label>to :</label>
+                      <input type="date" id="datepicker">
+
+                      <input type="submit" value="Go">
+                    </form>
+                  </div>
+
+                  <div id="valve-chart"></div>
+
+
+                  <div class="valve-tabs-each">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="valve-each1-home-tab" data-bs-toggle="pill"
+                          data-bs-target="#valve-each1-home" type="button" role="tab" aria-controls="valve-each1-home"
+                          aria-selected="true">No Consumption <span>30</span></button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="valve-each1-profile-tab" data-bs-toggle="pill"
+                          data-bs-target="#valve-each1-profile" type="button" role="tab"
+                          aria-controls="valve-each1-profile" aria-selected="false">No Communications
+                          <span>30</span></button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="valve-each1-contact-tab" data-bs-toggle="pill"
+                          data-bs-target="#valve-each1-contact" type="button" role="tab"
+                          aria-controls="valve-each1-contact" aria-selected="false">Balance Alerts
+                          <span>50</span></button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="valve-each1-lcontact-tab" data-bs-toggle="pill"
+                          data-bs-target="#valve-each1-lcontact" type="button" role="tab"
+                          aria-controls="valve-each1-lcontact" aria-selected="false">Alarms <span>50</span></button>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="valve-each1-home" role="tabpanel"
+                        aria-labelledby="valve-each1-home-tab">
+                        <!--tables-->
+
+                        <!--Commisioned-->
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Serial No.</th>
+                                <th scope="col">LDN</th>
+                                <th scope="col">BP No.</th>
+                                <th scope="col">Reading for the Month</th>
+                                <th scope="col">Current Balance</th>
+                                <th scope="col">LDP</th>
+                                <th scope="col">Reason</th>
+                                <th scope="col">Consumption Period</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>1</td>
+                                <td><a href="#">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>3545454</td>
+                                <td>$45464</td>
+                                <td>Demo</td>
+                                <td>Reason Demo Text</td>
+                                <td>2 years</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>2</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>3545454</td>
+                                <td>$45464</td>
+                                <td>Demo</td>
+                                <td>Reason Demo Text</td>
+                                <td>2 years</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>3</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>3545454</td>
+                                <td>$45464</td>
+                                <td>Demo</td>
+                                <td>Reason Demo Text</td>
+                                <td>2 years</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>4</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>3545454</td>
+                                <td>$45464</td>
+                                <td>Demo</td>
+                                <td>Reason Demo Text</td>
+                                <td>2 years</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>5</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>3545454</td>
+                                <td>$45464</td>
+                                <td>Demo</td>
+                                <td>Reason Demo Text</td>
+                                <td>2 years</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>6</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>3545454</td>
+                                <td>$45464</td>
+                                <td>Demo</td>
+                                <td>Reason Demo Text</td>
+                                <td>2 years</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!--end-->
+                      </div>
+                      <div class="tab-pane fade" id="valve-each1-profile" role="tabpanel"
+                        aria-labelledby="valve-each1-profile-tab">
+                        <!--tables-->
+
+                        <!--Commisioned-->
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Serial No.</th>
+                                <th scope="col">LDN</th>
+                                <th scope="col">BP No.</th>
+                                <th scope="col">Readings</th>
+                                <th scope="col">Reason for Non-Communication</th>
+                                <th scope="col">Last Date Time Stamp</th>
+                                <th scope="col">Signal Strength</th>
+                                <th scope="col">Battery Strength</th>
+                                <th scope="col">Signal Quality Strength (CSQ)</th>
+                                <th scope="col">RSRP</th>
+                                <th scope="col">Signal Noise</th>
+                                <th scope="col">Frequency</th>
+                                <th scope="col">Cell Tower ID</th>
+                                <th scope="col">ECL</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>1</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>Lorem Ipsum</td>
+                                <td>Reason Demo Text</td>
+                                <td>12:00PM</td>
+                                <td>Weak</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>Demo TRext</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>2233343</td>
+                                <td>ECL Name</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>2</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>Lorem Ipsum</td>
+                                <td>Reason Demo Text</td>
+                                <td>12:00PM</td>
+                                <td>Weak</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>Demo TRext</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>2233343</td>
+                                <td>ECL Name</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>3</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>Lorem Ipsum</td>
+                                <td>Reason Demo Text</td>
+                                <td>12:00PM</td>
+                                <td>Weak</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>Demo TRext</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>2233343</td>
+                                <td>ECL Name</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>4</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>Lorem Ipsum</td>
+                                <td>Reason Demo Text</td>
+                                <td>12:00PM</td>
+                                <td>Weak</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>Demo TRext</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>2233343</td>
+                                <td>ECL Name</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>5</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>Lorem Ipsum</td>
+                                <td>Reason Demo Text</td>
+                                <td>12:00PM</td>
+                                <td>Weak</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>Demo TRext</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>2233343</td>
+                                <td>ECL Name</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"></th>
+                                <td>6</td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">7667</a></td>
+                                <td><a href="javascript:void(0);" data-bs-toggle="valve-modal"
+                                    data-bs-target="#exampleModal">3455</a></td>
+                                <td>Lorem Ipsum</td>
+                                <td>Reason Demo Text</td>
+                                <td>12:00PM</td>
+                                <td>Weak</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>Demo TRext</td>
+                                <td>Strong</td>
+                                <td>Strong</td>
+                                <td>2233343</td>
+                                <td>ECL Name</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!--end-->
+                      </div>
+                      <div class="tab-pane fade" id="valve-each1-contact" role="tabpanel"
+                        aria-labelledby="valve-each1-contact-tab">
+                        <div class="threshold-tabs">
+                          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="threshold-home-tab" data-bs-toggle="pill" data-bs-target="#threshold-home" type="button" role="tab" aria-controls="threshold-home" aria-selected="true">Less than -ve Balance <br> <span>04</span> <br> <strong>Valve Closed</strong></button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="threshold-profile-tab" data-bs-toggle="pill" data-bs-target="#threshold-profile" type="button" role="tab" aria-controls="threshold-profile" aria-selected="false">Balance (Less than 100) <br> <span>04</span> <br> <strong>About to Close</strong></button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="threshold-contact-tab" data-bs-toggle="pill" data-bs-target="#threshold-contact" type="button" role="tab" aria-controls="threshold-contact" aria-selected="false">Balance (Less than 200) <br> <span>04</span> <br> <strong>Notification Issued</strong></button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="threshold-contact1-tab" data-bs-toggle="pill" data-bs-target="#threshold-contact1" type="button" role="tab" aria-controls="threshold-contact1" aria-selected="false">Balance (More than 200) <br> <span>Positive</span></button>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="threshold-home" role="tabpanel" aria-labelledby="threshold-home-tab">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Serial No.</th>
+                                      <th scope="col">LDN</th>
+                                      <th scope="col">BP No.</th>
+                                      <th scope="col">Current Balance</th>
+                                      <th scope="col">LDP</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">2</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">3</th>
+                                      <td colspan="2">Larry the Bird</td>
+                                      <td>@twitter</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              
+                            </div>
+                            <div class="tab-pane fade" id="threshold-profile" role="tabpanel" aria-labelledby="threshold-profile-tab">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Serial No.</th>
+                                      <th scope="col">LDN</th>
+                                      <th scope="col">BP No.</th>
+                                      <th scope="col">Current Balance</th>
+                                      <th scope="col">LDP</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">2</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">3</th>
+                                      <td colspan="2">Larry the Bird</td>
+                                      <td>@twitter</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="threshold-contact" role="tabpanel" aria-labelledby="threshold-contact-tab">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Serial No.</th>
+                                      <th scope="col">LDN</th>
+                                      <th scope="col">BP No.</th>
+                                      <th scope="col">Current Balance</th>
+                                      <th scope="col">LDP</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">2</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">3</th>
+                                      <td colspan="2">Larry the Bird</td>
+                                      <td>@twitter</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="threshold-contact1" role="tabpanel" aria-labelledby="threshold-contact1-tab">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Serial No.</th>
+                                      <th scope="col">LDN</th>
+                                      <th scope="col">BP No.</th>
+                                      <th scope="col">Current Balance</th>
+                                      <th scope="col">LDP</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">2</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">3</th>
+                                      <td colspan="2">Larry the Bird</td>
+                                      <td>@twitter</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="valve-each1-lcontact" role="tabpanel"
+                        aria-labelledby="valve-each1-lcontact-tab">
+                        <div class="valve-alarm-tab">
+                          <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                              aria-orientation="vertical">
+                              <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                                aria-selected="true">Tilt</button>
+                              <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-profile" type="button" role="tab"
+                                aria-controls="v-pills-profile" aria-selected="false">Leak</button>
+                              <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-messages" type="button" role="tab"
+                                aria-controls="v-pills-messages" aria-selected="false">Cover Open</button>
+                              <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-settings" type="button" role="tab"
+                                aria-controls="v-pills-settings" aria-selected="false">Unauthorized Battery Change</button>
+                            </div>
+                            <div class="tab-content" id="v-pills-tabContent">
+                              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                aria-labelledby="v-pills-home-tab">
+                                <div class="table-responsive">
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Serial No.</th>
+                                        <th scope="col">LDN</th>
+                                        <th scope="col">BP No.</th>
+                                        <th scope="col">Readings</th>
+                                        <th scope="col">Reason for Non-Communication</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>1</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>2</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>3</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>4</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>5</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>6</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                aria-labelledby="v-pills-profile-tab">
+                                <div class="table-responsive">
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Serial No.</th>
+                                        <th scope="col">LDN</th>
+                                        <th scope="col">BP No.</th>
+                                        <th scope="col">Readings</th>
+                                        <th scope="col">Reason for Non-Communication</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>1</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>2</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>3</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>4</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>5</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>6</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                                aria-labelledby="v-pills-messages-tab">
+                                <div class="table-responsive">
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Serial No.</th>
+                                        <th scope="col">LDN</th>
+                                        <th scope="col">BP No.</th>
+                                        <th scope="col">Readings</th>
+                                        <th scope="col">Reason for Non-Communication</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>1</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>2</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>3</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>4</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>5</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>6</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                                aria-labelledby="v-pills-settings-tab">
+                                <div class="table-responsive">
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Serial No.</th>
+                                        <th scope="col">LDN</th>
+                                        <th scope="col">BP No.</th>
+                                        <th scope="col">Readings</th>
+                                        <th scope="col">Reason for Non-Communication</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>1</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>2</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>3</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>4</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>5</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td>6</td>
+                                        <td>34535353</td>
+                                        <td>24343</td>
+                                        <td>2233343</td>
+                                        <td>Reason Demo Text</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact1-tab">
+                  <div class="alarms-tabs" style="margin: 30px 0 0 0;">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="alarms-home-tab" data-bs-toggle="pill" data-bs-target="#alarms-home" type="button" role="tab" aria-controls="alarms-home" aria-selected="true">Home</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="alarms-profile-tab" data-bs-toggle="pill" data-bs-target="#alarms-profile" type="button" role="tab" aria-controls="alarms-profile" aria-selected="false">Profile</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="alarms-contact-tab" data-bs-toggle="pill" data-bs-target="#alarms-contact" type="button" role="tab" aria-controls="alarms-contact" aria-selected="false">Contact</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="alarms-home" role="tabpanel" aria-labelledby="alarms-home-tab">...</div>
+                      <div class="tab-pane fade" id="alarms-profile" role="tabpanel" aria-labelledby="alarms-profile-tab">...</div>
+                      <div class="tab-pane fade" id="alarms-contact" role="tabpanel" aria-labelledby="alarms-contact-tab">...</div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </section>
+  <!--end-->
+
+<!--footer-->
+<footer class="main-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <p><i class="fa-regular fa-copyright"></i>Copyright 2024. All Rights Reserved. Designed & Developed by <a href="https://cloud4things.com/" target="_blank">Cloud4Things Technologies Pvt. Ltd</a></p>
+      </div>
+  </div>
+  </div>
+</footer>
+<!--end-->
+</div>
+
+<!--end-->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery.min.js"></script>
+
+  <!-- ApexCharts -->
+  <script src="js/apexcharts.js"></script>
+  <script src="js/apex-custom.js"></script>
+  <script src="js/stock-prices.js"></script>
+
+  <!--charts-->
+  <script src="js/Chart.min.js"></script>
+  <script src="js/chartjs-plugin-labels.js"></script>
+  <script src="js/chartjs-plugin-doughnutlabel.js"></script>
+  <script src="js/doughnut-custom.js"></script>
+
+  <!-- Optional JavaScript -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/custom.js"></script>
+
+  <!--Bootstrap-->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
