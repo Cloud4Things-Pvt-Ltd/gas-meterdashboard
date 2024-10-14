@@ -75,6 +75,10 @@ $(document).ready(function(){
     $(".user-box").slideToggle("slow");
   });
   
+  $(".menu-toggle").click(function () {
+    $(".menu-res").slideToggle();
+    $(this).find('i').toggleClass('fa-bars fa-times')
+});
 });
 
 
