@@ -1,4 +1,5 @@
 :root {
+  --body-color: #F5F6FA;
     --bg-color: #fff;
     --dark-color: #000;
     --grey-color: #ccc;
@@ -18,5 +19,5 @@
       --swatch4 : #323F7C;
       --swatch5 : #37c4fc;
       --swatch6 : #8A2BE2;
-    --main-font: "Lexend", sans-serif;
+    --main-font: "Plus Jakarta Sans", sans-serif;
   }

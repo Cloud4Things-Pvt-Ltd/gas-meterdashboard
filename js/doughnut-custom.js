@@ -1,8 +1,8 @@
 //Total Meters
 
 var BAChartDataValue = [
-	75, 
-	122,
+	160, 
+	62,
 ]; 
 var BAChartDataLabel = [
 	'Commissioned', 
@@ -39,10 +39,10 @@ window.addEventListener('load', function(){
 			maintainAspectRatio: false,
 			title: {
 				display: true,
-				position: 'top',
+				position: 'center',
 				fontSize: 28,
 				fontColor: '#767676',
-        		fontFamily:'Lexend',
+        		fontFamily:'Plus Jakarta Sans',
 				fontStyle: '600',
 				padding: 44,
 				margin: 30,
@@ -50,10 +50,10 @@ window.addEventListener('load', function(){
 			},
 			legend: {
 				display: true,
-				position: 'bottom',
+				position: 'top',
 				"labels": {
 					"fontSize": 16,
-					"fontFamily" : 'Lexend',
+					"fontFamily" : 'Plus Jakarta Sans',
 					 "fontWeight": '700',
 				}
 			},
@@ -66,7 +66,7 @@ window.addEventListener('load', function(){
             			fontStyle: '600',
 				    	padding: 44,
             			margin:10,
-            			fontFamily:'Lexend',
+            			fontFamily:'Plus Jakarta Sans',
 						position: 'outside'
 					},
 					{
@@ -74,7 +74,7 @@ window.addEventListener('load', function(){
 						fontColor: '#fff',
             			fontSize: 24,
             			fontStyle: '600',
-            			fontFamily:'Lexend',
+            			fontFamily:'Plus Jakarta Sans',
 					}
 				],
 				doughnutlabel: {
@@ -85,7 +85,7 @@ window.addEventListener('load', function(){
 							font: {
 								size: 40,
 								weight:600,
-								family:'Lexend',
+								family:'Plus Jakarta Sans',
 							}
 			  
 						}
@@ -113,11 +113,12 @@ var options = {
 	type: 'bar',
 	height: 350
   },
-  colors:['#F44336', '#E91E63'],
+  colors:['#55A605', '#D83535'],
   plotOptions: {
 	bar: {
 	  horizontal: false,
-	  columnWidth: '55%',
+	  columnWidth: '40%',
+	  columnGap:'20',
 	  endingShape: 'rounded'
 	},
   },
@@ -250,7 +251,7 @@ var options = {
 	type: 'bar',
 	height: 430
   },
-  colors:['#F44336', '#E91E63'],
+  colors:['#55A605', '#F44336'],
   plotOptions: {
 	bar: {
 	  horizontal: true,
