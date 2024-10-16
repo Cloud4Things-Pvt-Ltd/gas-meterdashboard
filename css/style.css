@@ -510,7 +510,7 @@ div#chcp_font_size button {
 .main-header input[type="date"] {
   background: var( --body-color);
   border: none;
-  width: 36%;
+  width: 64%;
   font-size: 13px;
   height: 33px;
   border-radius: 5px;
@@ -564,6 +564,7 @@ footer.main-footer {
   background: var(--dark-color);
   position: sticky;
   bottom: 0;
+  z-index: 999999;
 }
 .meter-tab .table-each h4 {
   text-align: left;
