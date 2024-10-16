@@ -372,8 +372,8 @@ div#chcp_font_size button {
 #m-chart1 canvas#BA-chart-job-error {
   width: 100% !important;
   object-fit: cover;
-  margin: -10px auto 0;
-  height: 650px !important;
+  margin: 0 auto;
+  height: auto !important;
 }
 .top-right.float-end {
   position: relative;
@@ -555,14 +555,15 @@ div#tab-chart {
 }
 .meter-tab .table-each {
   background: var(--bg-color);
-  margin: 30px 0px 20px;
-  padding: 30px;
+  margin: 2px 0px 0px;
+  padding: 20px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: none;
 }
 footer.main-footer {
   background: var(--dark-color);
-  margin-top: 40px;
+  position: sticky;
+  bottom: 0;
 }
 .meter-tab .table-each h4 {
   text-align: left;
@@ -579,12 +580,14 @@ div#chcp_font_size {
   margin: 0 auto 24px;
   display: block;
 }
-
 .table-each table thead {
   background: var(--color1);
   color: var(--bg-color);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
+}
+.table-each table tbody tr td, .table-each table tbody tr th{
+  font-size: 12px;
 }
 footer.main-footer p {
   padding: 10px 0;
