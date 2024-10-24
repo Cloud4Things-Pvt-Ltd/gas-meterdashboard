@@ -32,6 +32,7 @@
    
     .site-tabs .nav-pills .nav-link {
         width: 260px !important;
+        font-size: 15px !important;
     }
     .main-header select {
         width: 58%;
@@ -39,7 +40,6 @@
     .main-header input[type="date"] {
         width: 57%;
     }
-
 }
 @media screen and (max-width:1200px){
     .main-header select {
@@ -70,7 +70,12 @@
     .site-tabs .nav-pills .nav-link {
         width: 230px !important;
     }
-    
+    .site-tabs .nav-pills .nav-link.active img, .site-tabs .nav-pills .show>.nav-link img, .site-tabs .nav-pills .nav-link img {
+        width: 44px;
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
 
 }
 
@@ -199,6 +204,16 @@
         background: var(--bg-color);
         padding: 0px;
         border-radius: 10px;
+    }
+    .top-right.float-end {
+        width: 100%;
+        display: flow-root;
+        margin: 20px  auto 20px;
+    }
+    .top-right select {
+        background: var(--bg-color);
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 
