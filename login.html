@@ -40,7 +40,7 @@
 <section class="login-wrapper" style="background-image: url(images/login-bg.jpg);">
   <div class="">
     <div class="row">
-      <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 p-0" style="background: var(--body-color);">
+      <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 p-0" style="background: var(--body-color);">
         <div class="login-box">
           <img src="images/logo.png" alt="C4Tlogo">
           <h1>Welcome back!</h1>
@@ -50,14 +50,22 @@
             <input type="email" placeholder="example@mail.com">
             <label for="password">Password</label>
             <input type="password" placeholder="**********">
-            <div class="form-group"style="display: flex;">
-              <input type="checkbox" id="remember">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                  <input type="checkbox" id="remember">
               <label for="remember" style="
     line-height: 52px;
     margin-left: 9px;
-    color: var(--dark-color); width: 370px; font-size: 13px;
+    color: var(--dark-color); width: 370px; font-size: 13px; display: contents;
 ">Remember me</label>
-              <a href="forget-password.html" style="float: right;">Forgot your password?</a>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                  <a href="forget-password.html" style="float: right;">Forgot your password?</a>
+                </div>
+              </div>
+              
+              
           </div>
             <input type="submit" value="Login">
             <div class="divider">Or Login with</div>
