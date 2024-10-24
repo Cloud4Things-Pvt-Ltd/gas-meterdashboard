@@ -857,11 +857,12 @@ div#valve-chart {
 
 .consump-date ul {
   padding: 0;
+  margin: 4px 0 0 0;
 }
 .consump-date ul li {
   display: inline-block;
-  background: #ffffff;
-  color: #000;
+  background: #037183;
+  color: #fff;
   font-size: 12px;
   padding: 3px 8px;
   border-radius: 5px;
@@ -870,6 +871,20 @@ div#valve-chart {
   color: #2563eb;
   font-weight: 600;
   font-size: 10px;
+}
+
+.consump-date11 ul li {
+  display: inline-block;
+  background: transparent;
+  color: #2563eb;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.consump-date11 ul {
+  padding: 0;
+  margin: 0;
 }
 .valve-tabs-each .tab-content {
   padding: 0 4%;
@@ -936,21 +951,27 @@ strong.th4 {
   background: var(--color2) !important;
   color: var(
 --bg-color) !important;
-  border-radius: 5px !important;
+  border-radius: 0px !important;
   border-bottom: none;
   text-align: center;
-  padding: 10px 0 4px;
+  padding: 4px 0 4px;
   font-size: 16px !important;
+  width: 100% !important;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 .valve-alarm-tab .nav-pills .nav-link {
   border: none;
   background: #ccc !important;
   color: #000 !important;
-  border-radius: 5px !important;
+  border-radius: 0px !important;
   border-bottom: none;
   text-align: center;
-  padding: 10px 0 4px;
-  font-size: 16px !important;
+  padding: 4px 0 4px;
+  font-size: 15px !important;
+  width: 100% !important;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 .valve-alarm-tab {
   width: 75%;

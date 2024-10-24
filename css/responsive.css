@@ -18,7 +18,7 @@
 
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
     .top-right.float-end {
         position: relative;
         z-index: 9;
@@ -26,20 +26,37 @@
         display: flex;
         margin: 20px  50px;
     }
+    .threshold-tabs ul#pills-tab li {
+        width: 234px;
+    }
+    .threshold-tabs ul#pills-tab li button {
+        font-size: 13px !important;
+    }
+    .valve-alarm-tab ul#pills-tab li {
+        width: 234px;
+    }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1367px) {
    
     .site-tabs .nav-pills .nav-link {
         width: 260px !important;
+        font-size: 15px !important;
+    }
+    .site-tabs .nav-pills .nav-link.active, .site-tabs .nav-pills .show>.nav-link {
         font-size: 15px !important;
     }
     .main-header select {
         width: 58%;
     }
     .main-header input[type="date"] {
-        width: 57%;
+        width: 53%;
     }
+    .valve-tabs-each .nav-pills .nav-link {
+        width: 237px !important;
+        font-size: 15px !important;
+    }
+    
 }
 @media screen and (max-width:1200px){
     .main-header select {
@@ -63,6 +80,9 @@
     #m-chart1 canvas#BA-chart-job-error {
         margin: -9px auto;
         height: auto !important;
+    }
+    .valve-tabs-each {
+        position: inherit !important;
     }
     
 }
@@ -215,6 +235,12 @@
         width: 100%;
         margin-bottom: 10px;
     }
+    .valve-alarm-tab .nav-pills .nav-link {
+        width: 100% !important;
+        font-size: 12px !important;
+    }
+
+    
 }
 
 @media screen and (max-width: 991px) {
