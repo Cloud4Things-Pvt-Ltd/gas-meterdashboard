@@ -301,6 +301,7 @@ body {
   background-color: var(--body-color) !important;
   font-family: var(--main-font) !important;
   transition: background 0.2s linear;
+  overflow-x: hidden;
 }
 
 html * {
@@ -752,6 +753,7 @@ footer.main-footer {
   /* position: sticky; */
   /* bottom: 0; */
   /* z-index: 999999; */
+  margin: 80px 0 0 0;
 }
 .meter-tab .table-each h4 {
   text-align: left;
@@ -1319,9 +1321,9 @@ div#prepaid-chart .apexcharts-legend-marker{
   top: 7px !important;
 }
 
-.meter-tab {
+/* .meter-tab {
   padding: 0 0 50px 0;
-}
+} */
 .report-tab {
   background: #fff;
   padding: 30px;

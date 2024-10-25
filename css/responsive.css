@@ -67,9 +67,7 @@
         width: 100% !important;
         font-size: 15px !important;
     }
-    .meter-tab {
-        padding: 40px 0 80px 0;
-    }
+    
 }
 @media screen and (max-width: 1320px){
     .site-tabs .nav-pills .nav-link {
@@ -145,7 +143,7 @@
         left: 0;
         right: 0;
         margin: 0 auto;
-        top: 13%;
+        top: 80px;
         background: var(--color1);
         z-index: 999999;
         height: auto;
