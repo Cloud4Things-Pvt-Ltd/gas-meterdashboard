@@ -643,6 +643,9 @@ div#chcp_font_size button {
   font-family: var(--main-font);
   font-weight: 400;
 }
+.user-sec a i {
+  margin-right: 7px;
+}
 .user-sec {
   padding: 0;
   text-align: center;
@@ -704,6 +707,8 @@ div#chcp_font_size button {
 } */
 .site-tabs .tab-content {
   padding: 0 7%;
+  position: relative;
+  z-index: 9;
 }
 .site-tabs .nav {
   justify-content: center;
@@ -986,7 +991,6 @@ strong.th4 {
   background: var(--color2) !important;
   color: var(--bg-color) !important;
   border-radius: 5px !important;
-  border-bottom: 2px solid var(--color2);
   text-align: center;
   padding: 10px 0 4px;
   font-size: 15px !important;
@@ -997,11 +1001,10 @@ strong.th4 {
 
 .alarms-tabs .nav-pills .nav-link {
   border: none;
-  background: none !important;
-  color: #000000 !important;
-  border-radius: 0 !important;
-  border-bottom: 2px solid #000000;
-  text-align: left;
+  color: var(--dark-color) !important;
+  background-color: #f2f2f2 !important;
+  border-radius: 5px !important;
+  text-align: center;
   padding: 10px 0 4px;
   font-size: 13px !important;
 }
@@ -1012,7 +1015,7 @@ strong.th4 {
   color: var(--color2) !important;
   border-radius: 0 !important;
   border-bottom: 2px solid var(--color2);
-  text-align: left;
+  text-align: center;
   padding: 10px 0 4px;
   font-size: 13px !important;
 }
@@ -1269,11 +1272,11 @@ section.login-wrapper {
   background: var(--bg-color);
 }
 .threshold1-tabs .nav-pills .nav-link.active, .threshold1-tabs .nav-pills .show>.nav-link {
-  border: 2px solid transparent;
+  border: 2px solid var(--color1);
   background: #eef5ff !important;
   color: var(--dark-color) !important;
   border-radius: 8px !important;
-  border-bottom: none;
+  /* border-bottom: none; */
   text-align: center;
   padding: 10px 0 4px;
   font-size: 13px !important;
@@ -1325,8 +1328,8 @@ div#prepaid-chart .apexcharts-legend-marker{
   margin: 40px 0 80px;
 }
 .report-tab .nav-pills .nav-link {
-  color: var(--color-grey-2) !important;
-  background-color: #bae0ff !important;
+  color: var(--dark-color) !important;
+  background-color: #f2f2f2 !important;
   font-size: 14px !important;
   line-height: 47px !important;
   font-weight: 500;
@@ -1341,4 +1344,16 @@ div#prepaid-chart .apexcharts-legend-marker{
   color: var(--bg-color);
   font-size: 13px;
   font-weight: 600;
+}
+
+.report-tab .nav-pills .nav-link.active, .report-tab .nav-pills .show>.nav-link {
+  color: var(--bg-color) !important;
+  background-color: var(--color2) !important;
+  font-size: 14px !important;
+  line-height: 47px !important;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  margin: 10px 0 0 10px;
+  width: 100% !important;
 }

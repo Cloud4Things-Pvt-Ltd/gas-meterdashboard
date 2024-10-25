@@ -348,7 +348,7 @@ var options = {
   var options = {
 	series: [44, 55, 13, 43],
 	chart: {
-	type: 'pie',
+	type: 'donut',
   },
   labels: ['Valve Closed', 'About to Close', 'Notification Issued', 'Positive'],
   colors: ['#f00', '#ff7600','#2563eb', '#18ae00'],
