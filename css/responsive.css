@@ -77,6 +77,12 @@
         font-size: 15px !important;
     }
 }
+@media screen and(max-width:1280px){
+    .site-tabs .nav-pills .nav-link {
+        width: 200px !important;
+        font-size: 15px !important;
+    }
+}
 @media screen and (max-width:1200px){
     .main-header select {
         width: 100%;
