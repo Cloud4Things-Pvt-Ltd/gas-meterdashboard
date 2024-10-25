@@ -120,7 +120,7 @@
         top: 13%;
         background: var(--color1);
         z-index: 999999;
-        height: 100%;
+        height: auto;
         padding: 30px;
     }
     .sel-group label,  .main-date-pick form label {
@@ -284,6 +284,9 @@
         padding: 10% 20px 0 30px;
         height: 100vh;
     }
+    .report-tab .nav-pills .nav-link, .report-tab .nav-pills .nav-link.active, .report-tab .nav-pills .show>.nav-link {
+        width: 100% !important;
+    }
 }
 
 @media screen and (max-width: 675px) {
@@ -310,7 +313,9 @@
     .site-tabs .nav-pills .nav-link {
         width: 300px !important;
     }
-    
+    .report-tab .nav-pills .nav-link, .report-tab .nav-pills .nav-link.active, .report-tab .nav-pills .show>.nav-link {
+        width: 100% !important;
+    }
 }
 
 @media screen and (max-width: 375px) {}

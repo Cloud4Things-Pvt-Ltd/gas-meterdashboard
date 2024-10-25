@@ -231,57 +231,139 @@ var options = {
 
 //
 
+// var options = {
+// 	series: [{
+// 	data: [76, 85, 101, 98, 87, 105, 91],
+// 	name: 'Total',
+// 		legend: {
+// 		  text: 'Total',
+// 		  format: 'Custom Format: %{val} %{name}'
+// 		}
+//   }, {
+// 	data: [44, 55, 41, 64, 22, 43, 21],
+// 	name: 'Closed Valve',
+// 		legend: {
+// 		  text: 'Closed Valve',
+// 		  format: 'Custom Format: %{val} %{name}'
+// 		}
+//   }],
+// 	chart: {
+// 	type: 'bar',
+// 	height: 430
+//   },
+//   colors:['#55A605', '#F44336'],
+//   plotOptions: {
+// 	bar: {
+// 	  horizontal: true,
+// 	  dataLabels: {
+// 		position: 'top',
+// 	  },
+// 	}
+//   },
+//   dataLabels: {
+// 	enabled: true,
+// 	offsetX: -6,
+// 	style: {
+// 	  fontSize: '12px',
+// 	  colors: ['#fff']
+// 	}
+//   },
+//   stroke: {
+// 	show: true,
+// 	width: 1,
+// 	colors: ['#fff']
+//   },
+//   tooltip: {
+// 	shared: true,
+// 	intersect: false
+//   },
+//   xaxis: {
+// 	categories: ['01 Oct', '02 Oct', '03 Oct', '04 Oct', '05 Oct', '06 Oct', '07 Oct'],
+//   },
+  
+//   };
+
+//   var chart = new ApexCharts(document.querySelector("#valve-chart"), options);
+//   chart.render();
+
+
 var options = {
-	series: [{
-	data: [76, 85, 101, 98, 87, 105, 91],
-	name: 'Total',
-		legend: {
-		  text: 'Total',
-		  format: 'Custom Format: %{val} %{name}'
-		}
-  }, {
-	data: [44, 55, 41, 64, 22, 43, 21],
-	name: 'Closed Valve',
-		legend: {
-		  text: 'Closed Valve',
-		  format: 'Custom Format: %{val} %{name}'
-		}
-  }],
+	series: [
+	{
+	  name: 'Total',
+	  group: 'budget',
+	  data: [76, 85, 101, 98, 87, 105, 91]
+	},
+	{
+	  name: 'Closed Valve',
+	  group: 'budget',
+	  data: [44, 55, 41, 64, 22, 43, 21]
+	}
+  ],
 	chart: {
 	type: 'bar',
-	height: 430
-  },
-  colors:['#55A605', '#F44336'],
-  plotOptions: {
-	bar: {
-	  horizontal: true,
-	  dataLabels: {
-		position: 'top',
-	  },
-	}
-  },
-  dataLabels: {
-	enabled: true,
-	offsetX: -6,
-	style: {
-	  fontSize: '12px',
-	  colors: ['#fff']
-	}
+	height: 350,
+	stacked: true,
   },
   stroke: {
-	show: true,
 	width: 1,
 	colors: ['#fff']
   },
-  tooltip: {
-	shared: true,
-	intersect: false
+  dataLabels: {
+	formatter: (val) => {
+	  return val
+	}
+  },
+  plotOptions: {
+	bar: {
+	  horizontal: false
+	}
   },
   xaxis: {
-	categories: ['01 Oct', '02 Oct', '03 Oct', '04 Oct', '05 Oct', '06 Oct', '07 Oct'],
+	categories: ['01 Oct', '02 Oct', '03 Oct', '04 Oct', '05 Oct', '06 Oct', '07 Oct']
   },
-  
+  fill: {
+	opacity: 1
+  },
+  colors: ['#55A605', '#F44336'],
+  yaxis: {
+	labels: {
+	  formatter: (val) => {
+		return val
+	  }
+	}
+  },
+  legend: {
+	position: 'top',
+	horizontalAlign: 'left'
+  }
   };
 
   var chart = new ApexCharts(document.querySelector("#valve-chart"), options);
+  chart.render();
+
+
+
+  //
+  var options = {
+	series: [44, 55, 13, 43],
+	chart: {
+	type: 'pie',
+  },
+  labels: ['Valve Closed', 'About to Close', 'Notification Issued', 'Positive'],
+  colors: ['#f00', '#ff7600','#2563eb', '#18ae00'],
+  responsive: [{
+	breakpoint: 480,
+	options: {
+	  chart: {
+		// width: 200
+	  },
+	  legend: {
+		position: 'bottom'
+	  }
+	}
+  }]
+  };
+
+  var chart = new ApexCharts(document.querySelector("#prepaid-chart"), options);
   chart.render();
