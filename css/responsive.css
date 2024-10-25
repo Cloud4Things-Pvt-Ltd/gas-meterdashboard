@@ -327,6 +327,10 @@
         width: 100%;
         margin-bottom: 10px;
     }
+    .threshold-tabs ul#pills-tab {
+        display: block;
+        background: none;
+    }
 }
 
 @media screen and (max-width: 600px) {
